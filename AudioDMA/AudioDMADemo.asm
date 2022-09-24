@@ -57,9 +57,22 @@ mainLoop:
       sta $d020
       jsr printHex
 
+      ldy #80+10+18
+      lda volume+1
+      jsr printHex
+      
       lda $d610
       beq mainLoop
       sta $d610
+      cmp #122
+      bne +
+      dec volume+1
++
+      cmp #120
+      bne +
+      inc volume+1
+      
++
       cmp #$31
       bcc mainLoop
       cmp #$36
@@ -92,7 +105,8 @@ processkey:
       jsr playSample
       jmp mainLoop
 stext:
-      !SCR "current play address (use keys 1 - 5) $            /geehaf (sept 2022)"
+      !SCR "current play address (use keys 1 - 5) $            /geehaf (sept 2022)          "
+      !SCR "volume (adjust with z/x) : $"
       !BYTE 0
             
 playSample:
@@ -133,8 +147,8 @@ playSample:
       sta $d728
 
       sta $d728+$20
-
-      lda #$ff    ; volume
+volume:
+      lda #$ff/8    ; volume
       sta $d729
       sta $d729+$20
       
