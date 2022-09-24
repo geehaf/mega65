@@ -1,2 +1,2 @@
 # mega65
-A collection of demo program for the Mega65
+A collection of demo programs for the Mega65
