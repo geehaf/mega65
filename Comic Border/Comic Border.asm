@@ -38,7 +38,13 @@ playMusic = $7f03
       sta $d020
       lda #$00
       sta $d5
+
 loop: 
+      lda $d06f
+      and #%01111111    ; force PAL each frame just in case somebody changes it in the Freezer menu :)
+      ;ora #%10000000   ; force NTSC
+      sta $d06f      
+
       lda $d610   ; read the keyboard
       beq NoKey   ; branch if no keys pressed
       sta $d610   ; reset keyboard register
