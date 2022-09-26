@@ -30,6 +30,8 @@ playMusic = $7f03
       lda #$7f
       sta $dc0d
       sta $dd0d
+      lda $dc0d
+      lda $dd0d
       
       lda #$00
       jsr initMusic
@@ -169,8 +171,9 @@ noTop:
 -     lda $d011
       bpl -
 
-      inc sinusIndex+1
+      ;inc sinusIndex+1
       lda sinusIndex+1
+      inc
       and #$3f
       sta sinusIndex+1
       
@@ -295,7 +298,7 @@ msgNum      !BYTE 0
 msgs: !WORD t1,t9,t2,t9,t3,t9,t4,t9,t5,t9,t6,t9,t7,t9,t7a,t8,t9,t9,t9,t9,t10,t9,t9,t9,t9,t9,t11,t9,t99,$ffff
 
 
-t1:   !SCR "hello and welcome to a comic border",0
+t1:   !SCR "hello and welcome to comic border",0
 t2:   !SCR "a very simple demo by geehaf for the mega65",0
 t3:   !SCR "experimenting using the side border",0
 t4:   !SCR "for screen transitions",0
