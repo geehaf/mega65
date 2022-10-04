@@ -1,0 +1,7 @@
+title: My great example,
+description: A short, one-line description
+author: George Kirkham                # real or favorite artist name
+keywords: ["audio DMA", "samples"] # add as many keywords as you like
+languages: [asm]                # asm, basic, c, rust, ...
+requirements: [C64 Studio]        # cc65, llvm-mos, kickasm, acme, bsa, ca65, ophis, ...
+rom: 920376                        # tested with this ROM version
