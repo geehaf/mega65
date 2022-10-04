@@ -1,5 +1,5 @@
-title: My great example,
-description: A short, one-line description
+title: Audio DMA Example
+description: A simple example of how to play Audio samples using DMA on the Mega65. See source code for comments
 author: George Kirkham                # real or favorite artist name
 keywords: ["audio DMA", "samples"] # add as many keywords as you like
 languages: [asm]                # asm, basic, c, rust, ...
